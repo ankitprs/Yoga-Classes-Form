@@ -5,9 +5,11 @@ import userRoute from './routes/user.js'
 import entrollmentRoute from './routes/entrollment.js'
 import cors from 'cors';
 import Entrollments from './models/Entrollment.model.js';
-const app = express();
-const port = 3002;
+import dotenv from 'dotenv'
 
+dotenv.config()
+
+const app = express();
 
 
 app.use(cors());
@@ -29,7 +31,7 @@ User.sync()
 
 Entrollments.sync()
   .then(() => {
-    console.log('User model synced with the database');
+    console.log('Entrollments model synced with the database');
   })
   .catch((err) => {
     console.error('Error syncing User model:', err);
@@ -41,5 +43,5 @@ app.use('/api/v0/user', userRoute);
 app.use('/api/v0/enroll', entrollmentRoute)
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${process.env.PORT}`);
 });
