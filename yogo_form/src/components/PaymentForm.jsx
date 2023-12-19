@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import apiService from '../api/apiService';
-
+import { useSearchParams } from "react-router-dom";
 
 
 const PaymentForm = () => {
@@ -8,11 +8,18 @@ const PaymentForm = () => {
   const [popup, setPopup] = useState(false);
   const [paymentTitle, setPaymentTitle] = useState("Processing Payment")
   const [paymentDesctiption, setPaymentDesctiption] = useState("Please wait while we process your payment...")
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  console.log(`parameter-> ${searchParams.get('email_id')}`);
 
   const handlePayment = async () => {
     setPopup(true);
-    const reponse = await apiService.verify_payments(upiId, )
-
+    const email_id = searchParams.get('email_id'), batch = searchParams.get('batch')
+    const reponse = await apiService.verify_payments(
+      upiId,
+      email_id,
+      batch
+    )
     if (reponse == null) {
       setPaymentTitle("Payment Failed!")
       setPaymentDesctiption("🔴 🔴 🔴 Payment has been failed please try again...")

@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import mySQLConnection from '../config/db.js';
 
 
-const sequelize = mySQLConnection.sequelize
+const sequelize = mySQLConnection.sequelize;
 
 const Entrollments = sequelize.define('Entrollments', {
   month_email_id: {
