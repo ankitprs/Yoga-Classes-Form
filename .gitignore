@@ -1,8 +1,7 @@
-./yoga_form/node_modules
-./backend/node_modules
+
 
 ./yoga_form/build
 
-./yoga_form/.env
+.nyoga_form/.env
 ./backend/.env
 .gitignore
