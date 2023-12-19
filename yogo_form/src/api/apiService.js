@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const express_url = "https://vercel.com/ankit-s-projects-15971897/yoga-classes-form-pljr/api/v0"
+const express_url = "https://server-2rxz.onrender.com/api/v0"
 const URL = process.env.BACKED_DOMAIN_URL ? process.env.BACKED_DOMAIN_URL : express_url
 
 class ApiService {
