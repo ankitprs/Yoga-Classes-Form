@@ -1,4 +1,7 @@
 import axios from 'axios'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const URL = process.env.BACKED_DOMAIN_URL
 

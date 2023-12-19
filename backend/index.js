@@ -41,6 +41,9 @@ Entrollments.sync()
 // API endpoint to handle form submissions
 app.use('/api/v0/user', userRoute);
 app.use('/api/v0/enroll', entrollmentRoute)
+app.get('/', function (req, res) {
+  res.send('server is running')
+})
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
