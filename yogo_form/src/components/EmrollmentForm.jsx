@@ -22,6 +22,7 @@ const EnrollmentForm = () => {
     if (!(Number(age) >= 18 && Number(age) <= 65)) return setErrorMessage('Sorry... Only people within the age limit of 18-65 can enroll');
 
     try {
+      setShowPopup(true);
       const response = await apiService.submit_user_form(email, age, name, phone, selectedBatch)
       console.log(response.data);
       if (response.data.enrolled) {
