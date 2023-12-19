@@ -21,21 +21,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Sync the model with the database
-User.sync()
-  .then(() => {
-    console.log('User model synced with the database');
-  })
-  .catch((err) => {
-    console.error('Error syncing User model:', err);
-  });
+// User.sync()
+//   .then(() => {
+//     console.log('User model synced with the database');
+//   })
+//   .catch((err) => {
+//     console.error('Error syncing User model:', err);
+//   });
 
-Entrollments.sync()
-  .then(() => {
-    console.log('Entrollments model synced with the database');
-  })
-  .catch((err) => {
-    console.error('Error syncing User model:', err);
-  });
+// Entrollments.sync()
+//   .then(() => {
+//     console.log('Entrollments model synced with the database');
+//   })
+//   .catch((err) => {
+//     console.error('Error syncing User model:', err);
+//   });
 
 
 // API endpoint to handle form submissions
