@@ -4,7 +4,7 @@ import User from './models/User.model.js'
 import userRoute from './routes/user.js'
 import entrollmentRoute from './routes/entrollment.js'
 import cors from 'cors';
-
+import Entrollments from './models/Entrollment.model.js';
 const app = express();
 const port = 3002;
 
@@ -27,10 +27,19 @@ User.sync()
     console.error('Error syncing User model:', err);
   });
 
+Entrollments.sync()
+  .then(() => {
+    console.log('User model synced with the database');
+  })
+  .catch((err) => {
+    console.error('Error syncing User model:', err);
+  });
+
+
 // API endpoint to handle form submissions
 app.use('/api/v0/user', userRoute);
 app.use('/api/v0/enroll', entrollmentRoute)
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${port}`);
 });

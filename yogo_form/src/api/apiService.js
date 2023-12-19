@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = "http://localhost:3002/api/v0"
+const URL = process.env.BACKED_DOMAIN_URL
 
 class ApiService {
   submit_user_form = async (email_id, age, name, phone_number, batch) => {

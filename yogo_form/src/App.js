@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PaymentForm, EnrollmentForm } from './components'
-
+import IMG from './img/yoga_form.jpg'
 
 const LandingPage = () => {
   return (
@@ -12,7 +12,7 @@ const LandingPage = () => {
         <h1 className="text-4xl font-bold mb-4">Admission Form for Yoga Classes</h1>
         <img
           className="mb-4 rounded-lg"
-          src="https://img.freepik.com/free-photo/yoga-group-classes-inside-gym_1303-14788.jpg?w=1800&t=st=1702990486~exp=1702991086~hmac=814f5053fdca6c78c664d43cec15a8cfaaf8cce1d9275a5b262be09adfbd618c" // Replace with your actual image URL
+          src={IMG}
           alt="Yoga Class"
         />
         <p className="text-lg">
